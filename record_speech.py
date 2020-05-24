@@ -1,6 +1,9 @@
 # Description: This script uses the SpeechRecognition module to record speech
 # and trancribes it to a file
 
+# Added an __init__ section so that this can be ran as an individual script OR be imported as a module.
+# See the main() as an example of how to instantiate this module.
+
 # Import the SpeechRecognition module
 import speech_recognition as sr
 
@@ -40,6 +43,7 @@ def main():
     # Perform the export of the speech to a file
     sp.export(text)
     
+if __name__ == '__main__':
+    	main()
 
-main()
 
