@@ -7,6 +7,9 @@
 # Import the SpeechRecognition module
 import speech_recognition as sr
 
+# Playback text to speech
+import pyttsx3
+
 class recordSpeech:
 
     # Setup build the transcribed speech
@@ -42,6 +45,10 @@ def main():
     # Build text to be transcribed. Return it to the text variable
     text = sp.transcribe()
     # Perform the export of the speech to a file
+    engine = pyttsx3.init()
+    print("Spoken text: "+text)
+    engine.say(text)
+    engine.runAndWait()
     sp.export(text)
     
 if __name__ == '__main__':
