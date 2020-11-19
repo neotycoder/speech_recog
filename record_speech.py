@@ -16,7 +16,8 @@ class recordSpeech:
         record = sr.Recognizer()
         
         # Begin recording speech
-        mic = sr.Microphone(device_index=0)
+       # mic = sr.Microphone(device_index=0)
+        mic = sr.Microphone(device_index = None, sample_rate = 48000, chunk_size = 1024)
         with mic as source_recording:
             # Put recording into audio variable
             audio = record.listen(source_recording)
